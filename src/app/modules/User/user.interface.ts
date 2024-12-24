@@ -1,11 +1,11 @@
+import { Types } from "mongoose";
 
 
 export type TUser ={
     _id: string;
-    groupId: string;
+    group: Types.ObjectId;
     email: string;
     password: string;
-    role: string;
-    createdAt: Date;
-    updatedAt: Date;
+    isDeleted: boolean;
+    status: number;
 }

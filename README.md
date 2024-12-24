@@ -191,6 +191,141 @@ This API provides functionality to manage groups, including creating, fetching, 
 
 ---
 
+
+# Specialization Module API Documentation
+
+This API provides functionality to manage specialization, including creating, fetching, updating, and deleting specializations.
+
+## Table of Contents
+
+## Table of Contents
+
+- [Endpoints](#endpoints)
+  - [Create Specialization](#create-specialization)
+  - [Get Specialization(s)](#get-specializations)
+  - [Update Specialization](#update-specialization)
+  - [Delete Specialization](#delete-specialization)
+- [Error Handling](#error-handling)
+- [Global Error Response](#global-error-response)
+- [Setup and Usage](#setup-and-usage)
+
+---
+
+## Endpoints
+
+### Create Specialization
+
+- **URL:** `/api/specializations/store`
+- **Method:** `POST`
+- **Request Body:**
+  ```json
+  {
+    "name": "Specialization Name",
+    "description": "Specialization Description"
+  }
+- **Response:**
+```json
+{
+"statusCode": 201,
+"success": true,
+"message": "Specialization created successfully",
+"data": {
+  "_id": "specialization_id",
+  "name": "Specialization Name",
+  "description": "Specialization Description",
+  "createdAt": "timestamp",
+  "updatedAt": "timestamp"
+}
+}
+```
+  ```
+
+---
+
+### Get Specialization(s)
+
+- **URL:** `/api/specializations/get/:id?`
+  - Optional `id` parameter to fetch a specific group.
+- **Method:** `GET`
+- **Response:**
+  ```json
+  {
+  "statusCode": 200,
+  "success": true,
+  "message": "Specialization fetched successfully",
+  "data": [
+    {
+      "_id": "specialization_id",
+      "name": "Specialization Name",
+      "description": "Specialization Description",
+      "createdAt": "timestamp",
+      "updatedAt": "timestamp"
+    }
+  ]
+}
+  ```
+
+---
+
+### Update Specialization
+
+- **URL:** `/api/specializations/update/:id`
+- **Method:** `PUT`
+- **Request Body:**
+  ```json
+```json
+{
+  "name": "Updated Specialization Name",
+  "description": "Updated Specialization Description"
+}
+```
+  ```
+- **Response:**
+  ```json
+  {
+  "statusCode": 200,
+  "success": true,
+  "message": "Specialization updated successfully",
+  "data": {
+    "_id": "specialization_id",
+    "name": "Updated Specialization Name",
+    "description": "Updated Specialization Description",
+    "createdAt": "timestamp",
+    "updatedAt": "timestamp"
+  }
+}
+  ```
+
+---
+
+### Delete Specialization
+
+- **URL:** `/api/specializations/delete/:id`
+- **Method:** `DELETE`
+- **Response:**
+  ```json
+```json
+{
+"statusCode": 200,
+"success": true,
+"message": "Specialization deleted successfully",
+"data": {
+  "_id": "specialization_id",
+  "name": "Specialization Name",
+  "description": "Specialization Description",
+  "createdAt": "timestamp",
+  "updatedAt": "timestamp"
+}
+}
+```
+  ```
+
+---
+## Validation Handling
+
+- `name`: required
+- `description`: required
+
 ## Error Handling
 
 The application uses a global error handling middleware to provide consistent error responses. Types of errors include:
