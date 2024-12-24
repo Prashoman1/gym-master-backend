@@ -213,6 +213,13 @@ This API provides functionality to manage specialization, including creating, fe
 
 ## Endpoints
 
+## Validation Handling
+
+The application uses Zod for schema validation. Below are the validation rules for the Specialization module:
+
+- `name`: required, string
+- `description`: required, string
+
 ### Create Specialization
 
 - **URL:** `/api/specializations/store`
@@ -321,10 +328,7 @@ This API provides functionality to manage specialization, including creating, fe
   ```
 
 ---
-## Validation Handling
 
-- `name`: required
-- `description`: required
 
 ## Error Handling
 
