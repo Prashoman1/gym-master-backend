@@ -1,7 +1,7 @@
 import { Types } from "mongoose";
 
 
-type TTrainer = {
+export type TTrainer = {
     _id: string;
     user: Types.ObjectId;
     email: string;
@@ -21,10 +21,9 @@ type TTrainer = {
         country: string;
     };
     trainerId: string;
-    branchId: string;
+    punchId: string;
     phone: string;
     photo: string;
-    // specilization: "yoga" | "muscular" | "cardio" | "aerobics";
     specialization: Types.ObjectId;
     status: number;
     availability: "Morning" | "Evening" | "Night";

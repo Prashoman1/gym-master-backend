@@ -6,6 +6,7 @@ dotenv.config({ path: path.join(process.cwd(),'.env') })
 export default{
     port: process.env.PORT || 3000,
     db_url: process.env.DATABASE_URL,
+    salt_rounds: process.env.BCRYPT_SALT_ROUNDS,
     // jwt_token_secret: process.env.JWT_TOKEN_SECRET,
     // jwt_refresh_token_secret: process.env.jWT_REFRESH_TOKEN_SECRET,
     // jwt_token_expiry: process.env.JWT_EXPIRES_TOKEN,
